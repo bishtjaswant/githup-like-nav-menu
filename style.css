@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --notification: #58a6ff;
+  --github-dark: #010409;
+  --github-dark-lighter: #0d1117;
+  --github-dark-border: #30363d;
+  --github-button-hover: #8b949e;
+  --background: #171b20;
+  --color: #828b94;
+  --github: #c9d1d9;
+  --navigation-hover: #292f36;
+  --navbar-height: 60px;
+}
+
+body {
+  font-size: 16px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menu-wrapper {
+  display: flex;
+  position: fixed;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: var(--navbar-height);
+  z-index: 5;
+  gap: 25px;
+  background-color: var(--github-dark);
+  padding: 0 20px;
+  border-bottom: 2px solid var(--github-dark-border);
+}
+
+.menu-wrapper .logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-wrapper .page-title {
+  color: var(--github);
+  text-transform: capitalize;
+  font-size: 18px;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.logo-wrapper .page-title:hover {
+  background-color: var(--background);
+}
+
+.notification-mark {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--background);
+}
+
+@media (max-width: 400px) {
+  .page-title {
+    display: none;
+  }
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.logo svg {
+  fill: var(--github);
+}
+
+.menu-wrapper .action-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+  margin-left: 8px;
+  align-items: center;
+}
+
+.action-buttons .action-button {
+  position: relative;
+  display: grid;
+  grid-auto-columns: max-content;
+  width: 32px;
+  height: 32px;
+  color: var(--github-dark-lighter);
+  background: transparent;
+  border: 1px solid var(--github-dark-border);
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.action-buttons .action-button:hover {
+  background-color: var(--github-dark-lighter);
+  border: 1px solid var(--github);
+}
+
+
+.action-buttons .action-button svg{
+    fill: var(--github-button-hover);
+}
+.menu-wrapper .avatar-profile {
+  width:32px;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid var(--github-dark-border);
+  clip-path: circle();
+  cursor: pointer;
+}
+
+
+/* *********** Start  navigation menu *************~ */
+.navigation-menu{
+    background-color: var(--background);
+    z-index: 5;
+    border-left: 1px solid var(--github-dark-border);
+    height: 100vh;
+    width: 100%;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    position: fixed;
+    right: 0;
+    box-shadow:   rgba(100, 100, 111, 0.2)
+    0px 7px 29px 0px;;
+    animation: fadeInAnimation ease-in-out 0.5s forwards;
+}
+
+
+
+
+.navigation-menu .navigation-menu-items{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style-type: none;
+   
+    padding: 0;
+    color: var(--github-button-hover);
+    margin-top: 25px;
+}
+
+.navigation-menu .navigation-menu-items li{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--color);
+  padding: 0 8px;
+  text-transform: capitalize;
+  height: 30px;
+}
+
+.navigation-menu .navigation-menu-items > li:hover{
+  background-color: var(--navigation-hover);
+  color: var(--github);
+}
+
+.navigation-menu .navigation-menu-items > li > svg{
+  fill: var(--github);
+}
+
+.navigation-menu .navigation-menu-items .seperator{
+  display: flex;
+  align-items: center;
+  height: 6px;
+  padding: 0;
+}
+
+
+.navigation-menu .navigation-menu-items > .seperator:hover{
+  background-color: var(--background);
+}
+
+.navigation-menu .navigation-menu-items > .seperator > hr{
+  width: 100%;
+  border: 1px solid var(--github-dark-border);
+}
+
+
+.navigation-menu .avatar-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.navigation-menu .avatar-wrapper img{
+
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.navigation-menu .avatar-wrapper  .avatar-wrapper-detail{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.avatar-wrapper .avatar-wrapper-detail .avatar-wrapper-alias{
+  font-size: 18px;
+  color: var(--github);
+  font-weight: 600;
+}
+
+.avatar-wrapper .avatar-wrapper-detail .avatar-wrapper-name{
+  color: var(--color);
+  font-size: 14px;
+}
+
+.avatar-wrapper .avatar-close-btn {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  margin-left: auto;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-wrapper .avatar-close-btn:hover{
+  background-color: var(--navigation-hover);
+}
+
+.avatar-wrapper .avatar-close-btn svg{
+  fill: var(--github);
+  height: 16px;
+  width: 16px;
+}
+
+
+.none {
+  display: none;
+}
+.hide {
+  opacity: 0;
+  visibility: hidden;
+  animation: fadeOutAnimation;
+}
+
+
+
+@keyframes fadeInAnimation {
+  0%{
+    opacity: 0;
+    visibility: hidden;
+    max-width: 0;
+  }
+  100%{
+    overflow: 1;
+    visibility: visible;
+    max-width: 320px;
+  }
+}
+
+@keyframes fadeOutAnimation {
+  0%{
+    opacity: 1;
+    visibility: visible;
+    max-width: 320px;
+  }
+  100%{
+    overflow: 0;
+    visibility: hidden;
+    max-width: 0;
+  }
+}
+
+
+/* ***********  End navigation menu *************~ */
+
+
+
+
+
+
+
